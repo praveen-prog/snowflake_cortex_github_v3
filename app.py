@@ -93,7 +93,7 @@ def print_selected_repository(repo):
         source_file = os.path.join(os.getcwd(),"src/constants/constants_github_orig.py")
         print(f"Source directory is {source_file}")
         destination_file = os.path.join(os.getcwd(),"src/constants/constants_github_tmp.py")
-        #subprocess.run(["cp", source_file, destination_file])
+        subprocess.run(["cp", source_file, destination_file])
         logging.info(f"File copy completed successfully to {destination_file}")
         logging.info("Creating new Temp file Constants file for rep link")    
         old_string = "https://api.github.com/repos/praveen-prog/docs/branches/main"
