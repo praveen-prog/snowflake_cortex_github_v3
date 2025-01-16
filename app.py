@@ -85,6 +85,11 @@ def print_selected_repository(repo):
         selected_owner_name = repo_link[4]
         selected_repo_name = repo_link[5]
         selected_branch_name = repo_link[7]
+        st.write(f"Owner Name: {selected_owner_name}")
+        st.write(f"Repo Name: {selected_repo_name}")
+        st.write(f"Branch Name: {selected_branch_name}")
+        st.write(f"Repository: {repo}")
+                 
         
         source_file = os.path.join(os.getcwd(),"src/constants/constants_github_orig.py")
         print(f"Source directory is {source_file}")
@@ -115,11 +120,7 @@ def print_selected_repository(repo):
         find_replace_in_file(destination_file, old_string, new_string)
         logging.info("Created new Temp file Constants file for branch name")    
 
-        st.write(f"Owner Name: {selected_owner_name}")
-        st.write(f"Repo Name: {selected_repo_name}")
-        st.write(f"Branch Name: {selected_branch_name}")
-        st.write(f"Repository: {repo}")
-                 
+
     except Exception as e:
             raise snowflakecortexerror(e,sys)           
 
