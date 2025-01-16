@@ -22,6 +22,11 @@ st.set_page_config(
     layout="centered",
 )
 
+def refresh_app():
+    subprocess.Popen(["python", "sandr.py"])
+
+# Add the refresh button at the top-right
+st.sidebar.button("App Refresh", on_click=refresh_app)
 
 @st.cache_resource
 def get_training_pipeline():
